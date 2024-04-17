@@ -220,7 +220,7 @@ static NSString *const kGMUGeometryRegex =
     geometryArray = [dict objectForKey:kGMUGeometriesMember];
   } else if ([geometryType isEqual:kGMUGeometriesMember]) {
     geometryArray = [dict objectForKey:kGMUGeometryCollectionValue];
-  } else if ([_geometryRegex firstMatchInString:geometryType
+  } else if (geometryType != nil && [_geometryRegex firstMatchInString:geometryType
                                         options:0
                                           range:NSMakeRange(0, [geometryType length])]) {
     geometryArray = [dict objectForKey:kGMUCoordinatesMember];
