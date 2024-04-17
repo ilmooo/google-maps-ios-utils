@@ -237,6 +237,8 @@ static NSString *const kStyleMapDefaultState = @"normal";
   if ([container isKindOfClass:[GMUPlacemark class]]) {
     GMUPlacemark *placemark = container;
     line.title = placemark.title;
+  } else {
+    line.title = style.title;
   }
   line.tappable = true;
   line.map = _map;
@@ -273,6 +275,8 @@ static NSString *const kStyleMapDefaultState = @"normal";
   if ([container isKindOfClass:[GMUPlacemark class]]) {
     GMUPlacemark *placemark = container;
     poly.title = placemark.title;
+  } else {
+    poly.title = style.title;
   }
   poly.tappable = true;
   poly.map = _map;
